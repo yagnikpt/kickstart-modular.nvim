@@ -5,4 +5,6 @@
 
 ---@module 'lazy'
 ---@type LazySpec
-return {}
+return {
+  { 'wakatime/vim-wakatime', lazy = false },
+}
