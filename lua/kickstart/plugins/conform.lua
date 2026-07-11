@@ -13,6 +13,7 @@ require('conform').setup {
       ts = true,
       js = true,
       tsx = true,
+      sh = true,
     }
     if enabled_filetypes[vim.bo[bufnr].filetype] then
       return { timeout_ms = 500 }
@@ -27,14 +28,16 @@ require('conform').setup {
   formatters_by_ft = {
     -- rust = { 'rustfmt' },
     -- Conform can also run multiple formatters sequentially
-    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-    go = { "goimports", "gofmt" },
+    sh = { 'shfmt' },
+    bash = { 'shfmt' },
+    python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
+    go = { 'goimports', 'gofmt' },
     -- You can use 'stop_after_first' to run the first available formatter from the list
     -- javascript = { "biome", stop_after_first = true },
-    javascript = { "biome", "biome-organize-imports" },
-    javascriptreact = { "biome", "biome-organize-imports" },
-    typescript = { "biome", "biome-organize-imports" },
-    typescriptreact = { "biome", "biome-organize-imports" },
+    javascript = { 'biome', 'biome-organize-imports' },
+    javascriptreact = { 'biome', 'biome-organize-imports' },
+    typescript = { 'biome', 'biome-organize-imports' },
+    typescriptreact = { 'biome', 'biome-organize-imports' },
   },
 }
 
